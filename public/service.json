@@ -1,0 +1,44 @@
+[
+    {   
+        "id":"01",
+        "title":"vocal trainig",
+        "img":"https://www.wikihow.com/images/thumb/7/73/Train-Your-Voice-Step-1-Version-2.jpg/aid328650-v4-728px-Train-Your-Voice-Step-1-Version-2.jpg",
+        "price": "$100",
+        "description":"To train your voice, do a voice warm-up routine for 15 minutes every day. Start your routine by doing full-body stretches to open your lungs and improve your posture. Then, do some breathing exercises, like taking deep breaths and blowing them out in short bursts. Next, loosen your lips and jaw by humming and trilling."
+    },
+    {   
+        "id":"02",
+        "title":"vocal trainig",
+        "img":"https://www.wikihow.com/images/thumb/7/73/Train-Your-Voice-Step-1-Version-2.jpg/aid328650-v4-728px-Train-Your-Voice-Step-1-Version-2.jpg",
+        "price": "$100",
+        "description":"To train your voice, do a voice warm-up routine for 15 minutes every day. Start your routine by doing full-body stretches to open your lungs and improve your posture. Then, do some breathing exercises, like taking deep breaths and blowing them out in short bursts. Next, loosen your lips and jaw by humming and trilling."
+    },
+    {   
+        "id":"03",
+        "title":"vocal trainig",
+        "img":"https://www.wikihow.com/images/thumb/7/73/Train-Your-Voice-Step-1-Version-2.jpg/aid328650-v4-728px-Train-Your-Voice-Step-1-Version-2.jpg",
+        "price": "$100",
+        "description":"To train your voice, do a voice warm-up routine for 15 minutes every day. Start your routine by doing full-body stretches to open your lungs and improve your posture. Then, do some breathing exercises, like taking deep breaths and blowing them out in short bursts. Next, loosen your lips and jaw by humming and trilling."
+    },
+    {   
+        "id":"04",
+        "title":"vocal trainig",
+        "img":"https://www.wikihow.com/images/thumb/7/73/Train-Your-Voice-Step-1-Version-2.jpg/aid328650-v4-728px-Train-Your-Voice-Step-1-Version-2.jpg",
+        "price": "$100",
+        "description":"To train your voice, do a voice warm-up routine for 15 minutes every day. Start your routine by doing full-body stretches to open your lungs and improve your posture. Then, do some breathing exercises, like taking deep breaths and blowing them out in short bursts. Next, loosen your lips and jaw by humming and trilling."
+    },
+    {   
+        "id":"05",
+        "title":"vocal trainig",
+        "img":"https://www.wikihow.com/images/thumb/7/73/Train-Your-Voice-Step-1-Version-2.jpg/aid328650-v4-728px-Train-Your-Voice-Step-1-Version-2.jpg",
+        "price": "$100",
+        "description":"To train your voice, do a voice warm-up routine for 15 minutes every day. Start your routine by doing full-body stretches to open your lungs and improve your posture. Then, do some breathing exercises, like taking deep breaths and blowing them out in short bursts. Next, loosen your lips and jaw by humming and trilling."
+    },
+    {   
+        "id":"06",
+        "title":"vocal trainig",
+        "img":"https://www.wikihow.com/images/thumb/7/73/Train-Your-Voice-Step-1-Version-2.jpg/aid328650-v4-728px-Train-Your-Voice-Step-1-Version-2.jpg",
+        "price": "$100",
+        "description":"To train your voice, do a voice warm-up routine for 15 minutes every day. Start your routine by doing full-body stretches to open your lungs and improve your posture. Then, do some breathing exercises, like taking deep breaths and blowing them out in short bursts. Next, loosen your lips and jaw by humming and trilling."
+    }
+]
