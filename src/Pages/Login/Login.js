@@ -6,19 +6,21 @@ import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 const Login = () => {
 
     // const [error, setError] = useState('')
-    const googleProvider = new GoogleAuthProvider()
+
+
   const navigate = useNavigate()
-  const { logIn,login } = useContext(AuthContext);
+  const { logIn,googlePopUp } = useContext(AuthContext);
   const location = useLocation();
+  const googleProvider = new GoogleAuthProvider()
 
   const from = location.state?.from?.pathname || '/';
 
 
   const handleGoogleSignIn=()=>{
-    login(googleProvider)
+    googlePopUp(googleProvider)
     .then(result =>{
         const user = result.user;
-        console.log(user);
+            console.log(user);
     })
     .catch(error =>console.error(error))
 }

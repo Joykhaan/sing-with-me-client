@@ -15,6 +15,7 @@ const Header = () => {
     <li>  <Link to='/'>Home</Link> </li>
     <li>  <Link to='/login'>Login</Link> </li>
     {user?.email?<li>  <Link onClick={handleLogOut}>Logout</Link> </li>:<li>  <Link className='hidden'>Logout</Link> </li>}
+    {user?.email?<li>  <Link to='/myReview' >My Review Page</Link> </li>:<li>  <Link className='hidden'>Logout</Link> </li>}
     </>
     return (
         <div>
