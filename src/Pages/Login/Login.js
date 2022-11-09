@@ -1,7 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 
 const Login = () => {
+
+    // const [error, setError] = useState('')
+    const googleProvider = new GoogleAuthProvider()
+  const navigate = useNavigate()
+  const { logIn,login } = useContext(AuthContext);
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+
+
+  const handleGoogleSignIn=()=>{
+    login(googleProvider)
+    .then(result =>{
+        const user = result.user;
+        console.log(user);
+    })
+    .catch(error =>console.error(error))
+}
+
+  const handleonLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    logIn(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        // setError('');
+        navigate(from, { replace: true });
+      })
+      .catch(error => {
+        console.error(error)
+        // setError(error.message)
+      })
+  }
+
     return (
         <div>
             <h2>this is login page</h2>
@@ -15,7 +56,7 @@ const Login = () => {
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
 
-                        <form  className="card-body">
+                        <form onSubmit={handleonLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -34,7 +75,11 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+
+                           
                         </form>
+                        <p> Or try to login with <button onClick={handleGoogleSignIn} className="btn btn-primary py-2">Google</button> </p>
+                        
                     </div>
                 </div>
             </div>
