@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServicesCard = ({service}) => {
-    const {title,img,description,price,_id}=service
+const Showallservicescard = ({allservice}) => {
+    const {title,img,description,price,_id}=allservice
+    console.log('service',allservice)
     return (
         <div>
             <div className="card card-compact w-full bg-base-100 shadow-xl">
@@ -22,4 +23,4 @@ const ServicesCard = ({service}) => {
     );
 };
 
-export default ServicesCard;
+export default Showallservicescard;

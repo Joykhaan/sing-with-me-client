@@ -5,7 +5,7 @@ import Review from '../Review/Review';
 
 const Service = () => {
     const serviceDetails = useLoaderData()
-    // console.log('this is a', serviceDetails)
+    console.log('this is a', serviceDetails.img)
     const {user}=useContext(AuthContext);
     const [reviews, setReviews]=useState([]);
     const IID=  serviceDetails._id
@@ -23,12 +23,14 @@ const Service = () => {
         const userName=user?.displayName||'not found';
         const userImg= user?.photoURL||'not found';
         const id= serviceDetails._id;
+        const uid = user?.uid
         // console.log('this is fff',review);
         const postReview = {
             review,
             userName,
             userImg,
-            id
+            id,
+            uid
         }
         fetch('http://localhost:5000/review',{
             method: 'POST',
@@ -58,6 +60,7 @@ const Service = () => {
                 <div className="card card-compact w-96 bg-base-100 shadow-xl ">
                     <figure><img src={serviceDetails.img} alt="Shoes" /></figure>
                     <div className="card-body">
+                        <h2 className="card-title">{serviceDetails.price}</h2>
                         <h2 className="card-title">{serviceDetails.title}</h2>
                         <h1>price {serviceDetails.price}</h1>
                         <p>{serviceDetails.description}</p>
@@ -67,8 +70,8 @@ const Service = () => {
                     </div>
                 </div>
             </div>
-            {/* <Review></Review> */}
-            <h2>review is {reviews.length}</h2>
+            
+            {/* <h2>review is {reviews.length}</h2> */}
             {
                 reviews.map(revie=> <Review
                 key={revie._id}

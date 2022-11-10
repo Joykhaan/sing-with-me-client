@@ -5,6 +5,7 @@ import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 const Header = () => {
 
     const {user,logOut}=useContext(AuthContext);
+    console.log('user',user);
 
     const handleLogOut = () => {
         logOut()
@@ -15,7 +16,8 @@ const Header = () => {
     <li>  <Link to='/'>Home</Link> </li>
     <li>  <Link to='/login'>Login</Link> </li>
     {user?.email?<li>  <Link onClick={handleLogOut}>Logout</Link> </li>:<li>  <Link className='hidden'>Logout</Link> </li>}
-    {user?.email?<li>  <Link to='/myReview' >My Review Page</Link> </li>:<li>  <Link className='hidden'>Logout</Link> </li>}
+    {user?.email?<li>  <Link to={`/myreview/${user.uid}`} >My Review Page</Link> </li>:<li>  <Link className='hidden'>My Review Page</Link> </li>}
+    {user?.email?<li>  <Link to={`/addservices`} >Add services</Link> </li>:<li>  <Link className='hidden'>Add services</Link> </li>}
     </>
     return (
         <div>

@@ -8,8 +8,11 @@ const Review = ({revie}) => {
     return (
         <div  className='mt-12'>
             
-            <h2>the name is {userName}</h2>
-            <h2>the name is {review}</h2>
+            <h2>{userName}</h2>
+            <div className='flex justify-center'>
+                <img className='w-20' src={userImg} alt="" />
+            </div>
+            <h2>{review}</h2>
         </div>
     );
 };
