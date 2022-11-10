@@ -52,7 +52,7 @@ const Authprovider = ({children}) => {
 
 
     const authInfo={
-        register,logIn,logOut,updateUserProfile,googlePopUp,user
+        register,logIn,logOut,updateUserProfile,googlePopUp,user,loading
     }
     return (
         <div>

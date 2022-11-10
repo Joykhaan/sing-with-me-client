@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
@@ -6,6 +6,10 @@ const Myreview = () => {
 
     const myReviews = useLoaderData()
     
+    // const [myReviews, setmyReviews]=useState({})
+    // const remaining1= reviews.map(review=>review._id);
+    // console.log('check',myReviews.length)
+
     const handleDelete=(id) =>{
   
     const proced  =window.confirm('are you sure?? to delete is review');
@@ -16,6 +20,12 @@ const Myreview = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            // setReviews(myReviews)
+            if(data.deletedCount > 0){
+                alert('deleted successfully');
+            //    const remaining=data.deletedCount===id;
+            //     // setReviews(remaining)
+            }
         })
     }
     }

@@ -9,6 +9,7 @@ import Login from "../Login/Login";
 import Myreview from "../Myreview/Myreview";
 import Register from "../Register/Register";
 import Update from "../Update/Update";
+import Privateroute from "./Privateroute/Privateroute";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -43,12 +44,12 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myreview/:uid',
-                element:<Myreview></Myreview>,
+                element:<Privateroute><Myreview></Myreview></Privateroute>,
                 loader:({params}) => fetch(`http://localhost:5000/myreview/${params.uid}`),
             },
             {
                 path:'/addservices',
-                element:<Addservices></Addservices>,
+                element:<Privateroute><Addservices></Addservices></Privateroute>,
                 loader:({params}) => fetch(`http://localhost:5000/myreview/${params.uid}`),
             },
             {
