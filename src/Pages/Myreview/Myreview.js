@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Myreview = () => {
 
@@ -22,10 +24,16 @@ const Myreview = () => {
             console.log(data);
             // setReviews(myReviews)
             if(data.deletedCount > 0){
-                alert('deleted successfully');
+               
+
+                toast.success("Deleted Successfully",{
+                    position:"top-center"
+                });
+
             //    const remaining=data.deletedCount===id;
             //     // setReviews(remaining)
             }
+
         })
     }
     }
@@ -57,7 +65,7 @@ const Myreview = () => {
                      </div>
                     </div>
                     
-                    
+                    <ToastContainer></ToastContainer>
                 </div>)
             }
         </div>

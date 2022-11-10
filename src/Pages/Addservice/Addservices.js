@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Addservices = () => {
 
@@ -34,7 +36,9 @@ const Addservices = () => {
                 //     form.reset();
                 // }
                 if(data.acknowledged){
-                    alert('review succesful')
+                    toast.success("service added!!",{
+                        position:"top-center"
+                    });
                     form.reset();
                 }
                 
@@ -83,6 +87,7 @@ const Addservices = () => {
                     <input className='btn btn-primary' type="submit" value="Add your service" />
 
                 </form>
+                <ToastContainer></ToastContainer>
             </div>
 
         </div>

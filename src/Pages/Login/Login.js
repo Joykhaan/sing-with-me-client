@@ -1,6 +1,8 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 
 const Login = () => {
@@ -35,6 +37,9 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        toast.success("Deleted Successfully",{
+            position:"top-center"
+        });
         form.reset();
         // setError('');
         navigate(from, { replace: true });
@@ -80,10 +85,13 @@ const Login = () => {
 
                            
                         </form>
+                        <ToastContainer></ToastContainer>
                         <p> Or try to login with <button onClick={handleGoogleSignIn} className="btn btn-primary py-2">Google</button> </p>
                         
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     );
