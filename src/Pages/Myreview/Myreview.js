@@ -33,7 +33,7 @@ const Myreview = () => {
                       <h2 className='text-4xl text-primay mt-6 ml-4 font-bold text-center'> {myReview.userName}</h2>
                     </div>
                     <h2 className='text-primary font-bold  text-2xl'>Review:</h2>
-                    <h2 className='text-xl'>the name is {myReview.review}</h2> 
+                    <h2 className='text-xl'>{myReview.review}</h2> 
                      <div className='flex'>
                        
                         <span className='text-3xl text-primary mt-6 mr-4'>
