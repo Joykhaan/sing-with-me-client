@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import Biosection from '../Biosection/Biosection';
+import TotalTraffic from '../TotalTraffic/TotalTraffic';
 import Services from './Services/Services';
 
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <Biosection></Biosection>
+            <TotalTraffic></TotalTraffic>
             
             
         </div>

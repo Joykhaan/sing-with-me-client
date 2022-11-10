@@ -47,7 +47,7 @@ const Addservices = () => {
     }
     return (
         <div>
-            <h2>this is add services page</h2>
+            <h2 className='font-bold text-primary text-5xl text-center mb-8 mt-16'>this is add services page</h2>
 
             <div className='flex justify-center'>
 
@@ -56,21 +56,21 @@ const Addservices = () => {
 
                     <div>
                         <label className="label">
-                            <span className="label-text">Add a Service Name</span>
+                            <span className="label-text text-2xl">Add a Service Name</span>
                         </label>
                         <input name='title' type="text" placeholder="Service name" className="input input-bordered input-primary w-full max-w-xs block mb-8" reruired="true" />
                     </div>
 
                     <div>
                         <label className="label">
-                            <span className="label-text">Add image Link</span>
+                            <span className="label-text text-2xl">Add image Link</span>
                         </label>
                         <input name='img' type="text" placeholder="image url" className="input input-bordered input-primary w-full max-w-xs block mb-8" reruired="true" />
                     </div>
 
                     <div>
                         <label className="label">
-                            <span className="label-text">Set Price</span>
+                            <span className="label-text text-2xl">Set Price</span>
                         </label>
                         <input name='price' type="text" placeholder="Price" className="input input-bordered input-primary w-full max-w-xs block mb-8" reruired="true" />
 
@@ -79,12 +79,12 @@ const Addservices = () => {
 
                     <div>
                     <label className="label">
-                            <span className="label-text">Description</span>
+                            <span className="label-text text-2xl">Description</span>
                         </label>
                         <textarea name='description' className="textarea textarea-primary w-80" placeholder="type service description" reruired="true"></textarea>
                         
                     </div>
-                    <input className='btn btn-primary' type="submit" value="Add your service" />
+                    <input className='btn w-80 mb-16 mt-6 btn-primary' type="submit" value="Add your service" />
 
                 </form>
                 <ToastContainer></ToastContainer>

@@ -7,8 +7,8 @@ import 'react-photo-view/dist/react-photo-view.css';
 const ServicesCard = ({service}) => {
     const {title,img,description,price,_id}=service
     return (
-        <div>
-            <div className="card card-compact w-full bg-base-100 shadow-xl">
+        <div className='mx-8 md:mx-0'>
+            <div className="card card-compact w-full bg-base-100 shadow-xl ">
                 {/* <figure><img src={img} alt="Shoes" /></figure> */}
 
                 <PhotoProvider>
