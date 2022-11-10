@@ -12,10 +12,10 @@ const Services = () => {
     return (
         <div>
             <div className='text-center'>
-                <p className='text-primary font-bold text-3xl'>These are my best services to learn and make you a great singer! {services.length}</p>
+                <p className='text-primary font-bold text-5xl mt-24 mb-8'>These are my best {services.length} services to learn and make you a great singer! </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:px-20'>
                  {
-                services.map((service, dex) =>dex<3 &&  <ServicesCard
+                services.map((service) => <ServicesCard
                 key={service._id}
                 service={service}
                 >

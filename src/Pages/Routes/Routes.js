@@ -8,6 +8,7 @@ import Showallservicescard from "../Home/Showallservices/Showallservicescard";
 import Login from "../Login/Login";
 import Myreview from "../Myreview/Myreview";
 import Register from "../Register/Register";
+import Update from "../Update/Update";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
             {
                 path:'/allservices',
                 element:<Showallservices></Showallservices>,
+            },
+            {
+                path:'/update/:id',
+                element:<Update></Update>,
+                loader:({params}) => fetch(`http://localhost:5000/myreview/${params.uid}`),
             },
         ]
             

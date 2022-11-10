@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { json, useLoaderData } from 'react-router-dom';
+import {  useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../../contextApi/Authprovider/Authprovider';
 import Review from '../Review/Review';
 
@@ -17,6 +17,10 @@ const Service = () => {
     },[])
 
     const handleReview=event=>{
+        if(!user?.email){
+            alert('please login to add review')
+        }
+        else if(user?.email){
         event.preventDefault();
         const form= event.target;
         const review= form.review.value;
@@ -48,16 +52,16 @@ const Service = () => {
             }
         })
         .catch(err=>console.error(err));
-
+    }
         
     }
 
     return (
         <div>
-            <h2>this is service details page{serviceDetails.title}</h2>
+            <h2 className='text-primary font-bold text-5xl mt-24 mb-8 text-center'>Service Details</h2>
 
             <div className='flex justify-center'>
-                <div className="card card-compact w-96 bg-base-100 shadow-xl ">
+                <div className="card card-compact w-96 bg-base-100 shadow-xl w-1/2 ">
                     <figure><img src={serviceDetails.img} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{serviceDetails.price}</h2>
@@ -69,8 +73,9 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
+                
             </div>
-            
+            <h2 className='text-primary font-bold text-5xl mt-24 mb-8 text-center'>Review section</h2>
             {/* <h2>review is {reviews.length}</h2> */}
             {
                 reviews.map(revie=> <Review
@@ -81,11 +86,11 @@ const Service = () => {
             
            
 
-            <form onSubmit={handleReview} className='mt-12'>
+            <form onSubmit={handleReview} className='mt-12 text-center'>
                 <div>
-                <textarea name='review' className="textarea textarea-primary" placeholder="type your rivew" required></textarea>
-                <input className='btn'  type="submit" value="review"/>
+                <textarea name='review' className="textarea textarea-primary w-80" placeholder="type your rivew" required></textarea>
                 </div>
+                <input className='btn btn-primary mb-10'  type="submit" value="review"/>
             </form>
 
         </div>
