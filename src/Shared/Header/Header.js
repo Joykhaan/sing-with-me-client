@@ -42,7 +42,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link className="btn">Get started</Link>
+                    <Link > <img className='w-20' src="https://cdn.pixabay.com/photo/2017/09/20/15/09/singer-2768853_960_720.png" alt="" /> </Link>
                 </div>
             </div>
         {/* navbar end */}
