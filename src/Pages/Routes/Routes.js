@@ -1,5 +1,6 @@
 import Main from "../../Layout/Main/Main";
 import Addservices from "../Addservice/Addservices";
+import Blog from "../Blog/Blog";
 import Home from "../Home/Home";
 import Review from "../Home/Services/Review/Review";
 import Service from "../Home/Services/Service/Service";
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
             {
                 path:'/allservices',
                 element:<Showallservices></Showallservices>,
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>,
             },
             {
                 path:'/update/:id',
