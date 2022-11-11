@@ -22,11 +22,16 @@ const Authprovider = ({children}) => {
             unsubscribe();
         }
     },[])
-
+    
     // GoogleAuthProvider
     const googlePopUp = (provider) => {
         setLoading(true);
         return signInWithPopup(auth, provider);
+    }
+    // for github login
+    const gitLogin = (provider) =>{
+        setLoading(true)
+        return signInWithPopup(auth,provider);
     }
     // for logout
     const logOut =()=>{
@@ -52,7 +57,7 @@ const Authprovider = ({children}) => {
 
 
     const authInfo={
-        register,logIn,logOut,updateUserProfile,googlePopUp,user,loading,setLoading
+        register,logIn,logOut,updateUserProfile,googlePopUp,user,loading,setLoading,gitLogin
     }
     return (
         <div>

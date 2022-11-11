@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -8,9 +8,10 @@ import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 const Login = () => {
 
   const navigate = useNavigate()
-  const { logIn,googlePopUp,loading } = useContext(AuthContext);
+  const { logIn,googlePopUp,loading,gitLogin} = useContext(AuthContext);
   const location = useLocation();
   const googleProvider = new GoogleAuthProvider()
+  const gitProvider = new GithubAuthProvider();
 
   const from = location.state?.from?.pathname || '/';
 
@@ -20,6 +21,15 @@ const Login = () => {
     .then(result =>{
         const user = result.user;
             console.log(user);
+    })
+    .catch(error =>console.error(error))
+}
+
+const handleGitSignIn=()=>{
+    gitLogin(gitProvider)
+    .then(result =>{
+        const user = result.user;
+        console.log(user)
     })
     .catch(error =>console.error(error))
 }
@@ -90,6 +100,8 @@ const Login = () => {
                         </form>
                         <ToastContainer></ToastContainer>
                         <p className='text-center mb-8'> Or try to login with <button onClick={handleGoogleSignIn} className="btn btn-primary py-2 ml-4">Google</button> </p>
+                        
+                        <p className='text-center mb-8'> Or try to login with <button onClick={handleGitSignIn} className="btn btn-primary py-2 ml-4">Github</button> </p>
                         
                     </div>
                     
