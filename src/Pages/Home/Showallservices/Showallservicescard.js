@@ -12,8 +12,8 @@ const Showallservicescard = ({ allservice }) => {
 
                 <PhotoProvider>
                     <PhotoView src="/1.jpg">
-                        {/* <img src={img} alt="" /> */}
-                <figure><img src={img} alt="Shoes" /></figure>
+
+                        <figure><img src={img} alt="Shoes" /></figure>
 
                     </PhotoView>
                 </PhotoProvider>

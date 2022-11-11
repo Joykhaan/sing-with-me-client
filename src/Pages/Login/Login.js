@@ -7,11 +7,8 @@ import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 
 const Login = () => {
 
-    // const [error, setError] = useState('')
-
-
   const navigate = useNavigate()
-  const { logIn,googlePopUp } = useContext(AuthContext);
+  const { logIn,googlePopUp,loading } = useContext(AuthContext);
   const location = useLocation();
   const googleProvider = new GoogleAuthProvider()
 
@@ -41,18 +38,24 @@ const Login = () => {
             position:"top-center"
         });
         form.reset();
-        // setError('');
         navigate(from, { replace: true });
       })
       .catch(error => {
         console.error(error)
-        // setError(error.message)
       })
   }
 
+//   spiner
+  if(loading){
+    return  <div className="flex justify-center items-center my-8">
+    <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-600" role="status">
+      <span className="visually-hidden"></span>
+    </div>
+  </div>
+}
+
     return (
         <div>
-            <h2>this is login page</h2>
 
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -76,7 +79,7 @@ const Login = () => {
                                 </label>
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" />
                                 <label className="label">
-                                  <p>not register ? please   <Link to='/register'>Register</Link></p>
+                                  <p>not register ? please   <Link to='/register' className='text-primary font-bold'>Register</Link></p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
@@ -86,7 +89,7 @@ const Login = () => {
                            
                         </form>
                         <ToastContainer></ToastContainer>
-                        <p> Or try to login with <button onClick={handleGoogleSignIn} className="btn btn-primary py-2">Google</button> </p>
+                        <p className='text-center mb-8'> Or try to login with <button onClick={handleGoogleSignIn} className="btn btn-primary py-2 ml-4">Google</button> </p>
                         
                     </div>
                     

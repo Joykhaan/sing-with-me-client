@@ -4,9 +4,7 @@ import { AuthContext } from '../../contextApi/Authprovider/Authprovider';
 
 const Register = () => {
 
-    const {register,updateUserProfile}=useContext(AuthContext)
-
-    // const[error, setError]= useState('')
+    const {register,updateUserProfile,loading}=useContext(AuthContext)
     
     const navigate = useNavigate()
     const location = useLocation();
@@ -27,12 +25,10 @@ const Register = () => {
             form.reset()
             navigate(from,{replace: true});
             handleUpdateUser(name,photourl);
-            // setError('');
             
         })
         .catch(error=>{
             console.error(error)
-            // setError(error.message)
           })
     }
 
@@ -44,6 +40,13 @@ const Register = () => {
         updateUserProfile(profile)
         .then(()=>{})
         .catch(error=>console.error(error))
+    }
+    if(loading){
+        return  <div className="flex justify-center items-center my-8">
+        <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-600" role="status">
+          <span className="visually-hidden"></span>
+        </div>
+      </div>
     }
 
     return (
@@ -81,7 +84,7 @@ const Register = () => {
                                 </label>
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" />
                                 <label className="label">
-                                    <p>Allready registered? please   <Link to='/login'>Login</Link></p>
+                                    <p>Allready registered? please   <Link to='/login' className='text-primary font-bold'>Login</Link></p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

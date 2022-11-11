@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
@@ -8,9 +8,6 @@ const Myreview = () => {
 
     const myReviews = useLoaderData()
     
-    // const [myReviews, setmyReviews]=useState({})
-    // const remaining1= reviews.map(review=>review._id);
-    // console.log('check',myReviews.length)
 
     const handleDelete=(id) =>{
   
@@ -22,7 +19,6 @@ const Myreview = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            // setReviews(myReviews)
             if(data.deletedCount > 0){
                
 
@@ -30,8 +26,7 @@ const Myreview = () => {
                     position:"top-center"
                 });
 
-            //    const remaining=data.deletedCount===id;
-            //     // setReviews(remaining)
+
             }
 
         })
@@ -50,6 +45,7 @@ const Myreview = () => {
                         <img className='w-20 rounded-full' src={myReview.userImg} alt="" />
                       <h2 className='text-4xl text-primay mt-6 ml-4 font-bold text-center'> {myReview.userName}</h2>
                     </div>
+                    <h2 className='text-primary font-bold  text-xl'>{myReview.title}</h2>
                     <h2 className='text-primary font-bold  text-2xl'>Review:</h2>
                     <h2 className='text-xl'>{myReview.review}</h2> 
                      <div className='flex'>

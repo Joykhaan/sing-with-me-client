@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../contextApi/Authprovider/Authprovider';
 import Showallservicescard from './Showallservicescard';
 
 const Showallservices = () => {
     const [allservices, setAllServices]=useState([]);
+    const {loading}= useContext(AuthContext)
     useEffect(()=>{
         fetch('http://localhost:5000/allservices')
         .then(res=> res.json())
         .then(data=> setAllServices(data))
     },[])
+
+    // spiner
+    if(loading){
+        return  <div className="flex justify-center items-center my-8">
+        <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-blue-600" role="status">
+          <span className="visually-hidden"></span>
+        </div>
+      </div>
+    }
     return (
         <div>
             <div className='text-center'>

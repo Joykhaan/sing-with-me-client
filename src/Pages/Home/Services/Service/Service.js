@@ -7,20 +7,20 @@ import Review from '../Review/Review';
 
 const Service = () => {
     const serviceDetails = useLoaderData()
-    console.log('this is a', serviceDetails.img)
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     const IID = serviceDetails._id
-    // console.log(IID)
     useEffect(() => {
         fetch(`http://localhost:5000/review/${IID}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, [IID])
 
     const handleReview = event => {
         if (!user?.email) {
-            alert('please login to add review')
+            toast.error("Please login to add a review",{
+                position:"top-center"
+            });
         }
         else if (user?.email) {
             event.preventDefault();
@@ -30,13 +30,15 @@ const Service = () => {
             const userImg = user?.photoURL || 'not found';
             const id = serviceDetails._id;
             const uid = user?.uid
-            // console.log('this is fff',review);
+            const title=serviceDetails.title
+
             const postReview = {
                 review,
                 userName,
                 userImg,
                 id,
-                uid
+                uid,
+                title
             }
             fetch('http://localhost:5000/review', {
                 method: 'POST',
@@ -82,7 +84,6 @@ const Service = () => {
 
             </div>
             <h2 className='text-primary font-bold text-5xl mt-24 mb-8 text-center'>Review section</h2>
-            {/* <h2>review is {reviews.length}</h2> */}
             {
                 reviews.map(revie => <Review
                     key={revie._id}

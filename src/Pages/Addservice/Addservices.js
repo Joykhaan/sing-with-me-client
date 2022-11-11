@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,7 +11,7 @@ const Addservices = () => {
         const img = form.img.value;
         const price = form.price.value;
         const description = form.description.value;
-        console.log(title, img, price,description)
+
 
 
         const addservices= {
@@ -31,10 +30,7 @@ const Addservices = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // if (data.acknowledged) {
-                //     toast("Service Added Successfully");
-                //     form.reset();
-                // }
+                
                 if(data.acknowledged){
                     toast.success("service added!!",{
                         position:"top-center"
@@ -58,21 +54,21 @@ const Addservices = () => {
                         <label className="label">
                             <span className="label-text text-2xl">Add a Service Name</span>
                         </label>
-                        <input name='title' type="text" placeholder="Service name" className="input input-bordered input-primary w-full max-w-xs block mb-8" reruired="true" />
+                        <input name='title' type="text" placeholder="Service name" className="input input-bordered input-primary w-full max-w-xs block mb-8" required="true" />
                     </div>
 
                     <div>
                         <label className="label">
                             <span className="label-text text-2xl">Add image Link</span>
                         </label>
-                        <input name='img' type="text" placeholder="image url" className="input input-bordered input-primary w-full max-w-xs block mb-8" reruired="true" />
+                        <input name='img' type="text" placeholder="image url" className="input input-bordered input-primary w-full max-w-xs block mb-8" required="true" />
                     </div>
 
                     <div>
                         <label className="label">
                             <span className="label-text text-2xl">Set Price</span>
                         </label>
-                        <input name='price' type="text" placeholder="Price" className="input input-bordered input-primary w-full max-w-xs block mb-8" reruired="true" />
+                        <input name='price' type="text" placeholder="Price" className="input input-bordered input-primary w-full max-w-xs block mb-8" required="true" />
 
                     </div>
 
@@ -81,7 +77,7 @@ const Addservices = () => {
                     <label className="label">
                             <span className="label-text text-2xl">Description</span>
                         </label>
-                        <textarea name='description' className="textarea textarea-primary w-80" placeholder="type service description" reruired="true"></textarea>
+                        <textarea name='description' className="textarea textarea-primary w-80" placeholder="type service description" required="true"></textarea>
                         
                     </div>
                     <input className='btn w-80 mb-16 mt-6 btn-primary' type="submit" value="Add your service" />
