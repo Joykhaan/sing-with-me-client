@@ -50,11 +50,13 @@ const Service = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    if (data.acknowledged) {
+                    if (!data.acknowledged) {
                         
-                        toast.success("Review  added!!",{
-                            position:"top-center"
+                        toast.success("Please login first!!",{
+                            position:"top-center",
+                            autoClose: 1000,
                         });
+                        
                         
                         form.reset();
                     }
