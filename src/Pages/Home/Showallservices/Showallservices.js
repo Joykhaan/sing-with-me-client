@@ -6,7 +6,7 @@ const Showallservices = () => {
     const [allservices, setAllServices]=useState([]);
     const {loading}= useContext(AuthContext)
     useEffect(()=>{
-        fetch('http://localhost:5000/allservices')
+        fetch('https://sing-with-me-server.vercel.app/allservices')
         .then(res=> res.json())
         .then(data=> setAllServices(data))
     },[])

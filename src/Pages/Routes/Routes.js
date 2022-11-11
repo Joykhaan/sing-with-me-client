@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element:<Service></Service>,
-                loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader:({params}) => fetch(`https://sing-with-me-server.vercel.app/services/${params.id}`),
             },
             {
                 path:'/review',
@@ -45,12 +45,12 @@ const router = createBrowserRouter([
             {
                 path:'/myreview/:uid',
                 element:<Privateroute><Myreview></Myreview></Privateroute>,
-                loader:({params}) => fetch(`http://localhost:5000/myreview/${params.uid}`),
+                loader:({params}) => fetch(`https://sing-with-me-server.vercel.app/myreview/${params.uid}`),
             },
             {
                 path:'/addservices',
                 element:<Privateroute><Addservices></Addservices></Privateroute>,
-                loader:({params}) => fetch(`http://localhost:5000/myreview/${params.uid}`),
+                loader:({params}) => fetch(`https://sing-with-me-server.vercel.app/myreview/${params.uid}`),
             },
             {
                 path:'/allservices',
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
             {
                 path:'/update/:id',
                 element:<Update></Update>,
-                loader:({params}) => fetch(`http://localhost:5000/update/${params.id}`),
+                loader:({params}) => fetch(`https://sing-with-me-server.vercel.app/update/${params.id}`),
             },
         ]
             

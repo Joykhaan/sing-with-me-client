@@ -24,7 +24,7 @@ const ServicesCard = ({ service }) => {
                     <h2 className="card-title">{price}</h2>
                     <h2 className="card-title">{title}</h2>
                     {
-                        description.length > 100 ? <p>{description.slice(0, 100) + '....'} </p> : <p>{description}</p>
+                        description.length > 100 ? <p className='text-left'>{description.slice(0, 100) + '....'} </p> : <p>{description}</p>
                     }
                     <div className="card-actions justify-end">
                         <Link to={`/services/${_id}`} className="btn btn-primary">View Details</Link>

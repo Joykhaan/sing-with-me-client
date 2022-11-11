@@ -21,7 +21,7 @@ const Addservices = () => {
             description
         }
 
-        fetch('http://localhost:5000/addservices', {
+        fetch('https://sing-with-me-server.vercel.app/addservices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

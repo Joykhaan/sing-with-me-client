@@ -13,7 +13,7 @@ const Myreview = () => {
   
     const proced  =window.confirm('are you sure?? to delete is review');
     if(proced){
-        fetch(`http://localhost:5000/delmyreview/${id}`,{
+        fetch(`https://sing-with-me-server.vercel.app/delmyreview/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())
@@ -40,10 +40,10 @@ const Myreview = () => {
                     key={myReview._id}
                     className='my-10'
                 >
-                    <div className='bg-blue-100 w-1/3 mx-auto p-8'>
+                    <div className='bg-blue-100  md:w-1/3 mx-8 md:mx-auto p-8'>
                     <div className='flex justify-center mb-8'>
                         <img className='w-20 rounded-full' src={myReview.userImg} alt="" />
-                      <h2 className='text-4xl text-primay mt-6 ml-4 font-bold text-center'> {myReview.userName}</h2>
+                      <h2 className='text-xl md:text-4xl text-primay mt-6 ml-4 font-bold text-center'> {myReview.userName}</h2>
                     </div>
                     <h2 className='text-primary font-bold  text-xl'>{myReview.title}</h2>
                     <h2 className='text-primary font-bold  text-2xl'>Review:</h2>

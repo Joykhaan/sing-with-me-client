@@ -15,7 +15,7 @@ const Update = () => {
 
         event.preventDefault();
         console.log('user',review)
-        fetch(`http://localhost:5000/delmyreview/${reviews._id}`,{
+        fetch(`https://sing-with-me-server.vercel.app/delmyreview/${reviews._id}`,{
             method:'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -43,12 +43,12 @@ const Update = () => {
                 <form onSubmit={handleupdate}>
                     <div>
                         <label className="label">
-                            <span className="label-text">review</span>
+                            <span className="label-text mt-16 text-primary font-bold text-5xl mb-8">Edit your review</span>
                         </label>
                         <textarea onChange={handleInputchange} name='review' defaultValue={reviews.review} className="textarea textarea-primary w-80" placeholder="type service description" reruired="true"></textarea>
 
                     </div>
-                    <input className='btn btn-primary' type="submit" value="Update" />
+                    <input className='btn btn-primary mb-16' type="submit" value="Edit" />
 
                 </form>
             </div>

@@ -11,7 +11,7 @@ const Service = () => {
     const [reviews, setReviews] = useState([]);
     const IID = serviceDetails._id
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${IID}`)
+        fetch(`https://sing-with-me-server.vercel.app/review/${IID}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [IID])
@@ -40,7 +40,7 @@ const Service = () => {
                 uid,
                 title
             }
-            fetch('http://localhost:5000/review', {
+            fetch('https://sing-with-me-server.vercel.app/review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
